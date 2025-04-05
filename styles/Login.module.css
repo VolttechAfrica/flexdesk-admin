@@ -164,6 +164,11 @@
   background-color: #3a56d4;
 }
 
+.login_button:disabled {
+  background: #a4b6f1;
+  cursor: not-allowed;
+}
+
 /* Sign up link */
 .signup_link {
   text-align: center;
@@ -270,3 +275,12 @@
   height: auto;
 }
 
+@media (max-width: 480px) {
+  .form_input {
+    padding: 1rem;
+  }
+  .login_button {
+    padding: 1rem;
+  }
+
+}

@@ -17,3 +17,22 @@ a {
   margin: 0;
   padding: 0;
 }
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #D92D20;
+  background: #FFFBFA;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #FEE4E2;
+  font-size: 14px;
+}
+
+.error::before {
+  content: "×";
+  font-size: 20px;
+  font-weight: bold;
+}

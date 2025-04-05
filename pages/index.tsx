@@ -34,13 +34,14 @@ const Login: NextPage = () => {
               src="/images/logo.png"
               alt="FlexTest Logo"
               width={150}
-              height={40}
+              height={30}
               priority
             />
           </div>
 
           {/* Heading */}
           <div className={styles.welcome_heading}>
+            <h3>Login</h3>
             <p className={styles.subtitle}>
                 Welcome back! Please enter your details
             </p>
@@ -158,7 +159,7 @@ const Login: NextPage = () => {
         {/* Farm Illustration */}
         <div className={styles.illustration_container}>
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-WGBVCu3eSQ95TVQIIYR6Z5YRURo5Vn.png"
+            src="/images/farm_illustration.avif"
             alt="Farm Illustration"
             width={800}
             height={300}

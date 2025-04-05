@@ -161,9 +161,10 @@ const Login: NextPage = () => {
           <Image
             src="/images/farm_illustration.avif"
             alt="Farm Illustration"
-            width={800}
-            height={300}
+            width={700} 
+            height={250}
             className={styles.illustration}
+            style={{ filter: "blur(5px)" }}
           />
         </div>
       </div>

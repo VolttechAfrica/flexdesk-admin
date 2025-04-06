@@ -164,7 +164,7 @@ const Login: NextPage = () => {
             width={700} 
             height={250}
             className={styles.illustration}
-            style={{ filter: "blur(5px)" }}
+            style={{ filter: "blur(10px)" }}
           />
         </div>
       </div>

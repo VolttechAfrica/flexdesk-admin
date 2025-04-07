@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { authService, LoginResponse } from "../services/api/auth";
 import { useRouter } from "next/router";
@@ -14,13 +13,13 @@ export const useAuth = () => {
 
     try {
       const response = await authService.login({
-        userid: email,
+        email,
         password,
       });
 
       if (response.token) {
         localStorage.setItem("userData", JSON.stringify(response.data));
-        document.cookie = `token=${response}; path=/`;
+        document.cookie = `token=${response.token}; path=/`;
         router.push("/dashboard");
         return true;
       } else {

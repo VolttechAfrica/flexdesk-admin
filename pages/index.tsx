@@ -34,14 +34,14 @@ const Login: NextPage = () => {
               src="/images/logo.png"
               alt="FlexTest Logo"
               width={150}
-              height={30}
+              height={28}
               priority
             />
           </div>
 
           {/* Heading */}
           <div className={styles.welcome_heading}>
-            <h3>Login</h3>
+            <h1>Login</h1>
             <p className={styles.subtitle}>
                 Welcome back! Please enter your details
             </p>
@@ -164,7 +164,7 @@ const Login: NextPage = () => {
             width={700} 
             height={250}
             className={styles.illustration}
-            style={{ filter: "blur(10px)" }}
+            style={{ filter: "blur(4px)" }}
           />
         </div>
       </div>

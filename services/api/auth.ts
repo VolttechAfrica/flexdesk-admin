@@ -1,15 +1,17 @@
-
-import { API_URL } from "../../config/constants";
+import axios from "axios";
+import { API_URL, MOCKARO_KEY } from "../../config/constants";
 
 export interface LoginCredentials {
-  userid: string;
+  email: string;
   password: string;
 }
 
 export interface UserData {
-  userId: string;
+  Id: string;
   email: string;
   name: string;
+  organizationId: string;
+  password: string;
   profilePicture: string;
   createdAt: string;
 }
@@ -22,14 +24,17 @@ export interface LoginResponse {
 
 export const authService = {
   async login(credentials: LoginCredentials): Promise<LoginResponse> {
-    const response = await fetch(`${API_URL}/api/v2/school/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(credentials),
-    });
-    
-    return response.json();
-  }
+    const response = await axios.post<LoginResponse>(
+      `${API_URL}/auth/login`,
+      credentials,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Key": MOCKARO_KEY,
+        },
+      }
+    );
+
+    return response.data;
+  },
 };

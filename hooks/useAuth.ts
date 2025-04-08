@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { authService, LoginResponse } from "@services/api/auth";
+import { authService, LoginResponse } from "@services/api/auth.ts";
 import { useRouter } from "next/router";
 
 export const useAuth = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const router = useRouter();
 
   const login = async (email: string, password: string) => {

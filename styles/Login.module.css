@@ -41,6 +41,8 @@
   padding-top:2rem;
 }
 
+
+
 /* Welcome heading */
 .welcome_heading {
   margin-bottom: 2.5rem;
@@ -242,3 +244,9 @@
   font-weight: bold;
 }
 
+@media (max-width: 480px) {
+  .logo_container {
+    margin-bottom: 2.5rem;
+    padding-top:0rem !important;
+  }
+}

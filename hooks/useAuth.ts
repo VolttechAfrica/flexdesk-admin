@@ -28,6 +28,7 @@ export const useAuth = () => {
         return false;
       }
     } catch (err) {
+      console.error("Login error", err);
       setError("You are not allowed to login. Please try again");
       return false;
     } finally {

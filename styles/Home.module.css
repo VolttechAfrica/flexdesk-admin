@@ -113,8 +113,4 @@
     width: 100%;
     flex-direction: column;
   }
-  .logo_container {
-    margin-bottom: 2.5rem;
-    padding-top:0px;
-  }
 }

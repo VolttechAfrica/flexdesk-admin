@@ -2,11 +2,6 @@ const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    PUBLIC_API_URL: process.env.PUBLIC_API_URL,
-    MOCKARO_KEY: process.env.MOCKARO_KEY,
-    APP_NAME: process.env.APP_NAME,
-  },
   webpack: (config) => {
     config.resolve.alias["@config"] = path.resolve(__dirname, "config");
     config.resolve.alias["@components"] = path.resolve(__dirname, "components");

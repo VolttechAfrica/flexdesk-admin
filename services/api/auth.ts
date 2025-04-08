@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL, MOCKARO_KEY } from "../../config/constants";
+import { API_URL, MOCKARO_KEY } from "@config/constants";
 
 export interface LoginCredentials {
   email: string;

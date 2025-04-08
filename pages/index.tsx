@@ -1,11 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Check } from "lucide-react"
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
-import styles from "../styles/Login.module.css";
-import { useAuth } from "../hooks/useAuth";
+import styles from "@styles/Login.module.css";
+import { useAuth } from "@hooks/useAuth";
+import FormInput from "@components/FormInput";
+import SubmitButton from "@components/Button";
 
 const Login: NextPage = () => {
 
@@ -54,33 +55,24 @@ const Login: NextPage = () => {
               <label htmlFor="username" className={styles.form_label}>
                 Email Address
               </label>
-              <div className={styles.input_container}>
-                <input
-                  type="text"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className={styles.form_input}
-                />
-                <div className={styles.input_icon}>
-                  <Check className={styles.check_icon} />
-                </div>
-              </div>
+              <FormInput
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
 
             <div className={styles.form_group}>
               <label htmlFor="password" className={styles.form_label}>
                 Password
               </label>
-              <input
-                  type="password"
-                  placeholder="••••••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className={styles.form_input}
-                />
+              <FormInput
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
 
             <div className={styles.form_options}>
@@ -97,12 +89,7 @@ const Login: NextPage = () => {
               </div>
             </div>
 
-            <button type="submit"
-            disabled={isLoading} 
-            className={styles.login_button}
-            >
-              {isLoading ? "Signing in..." : "Sign in"}
-            </button>
+            <SubmitButton isLoading={isLoading} text="Log In" loadingText="Logging in..." />
           </form>
 
           <div className={styles.signup_link}>

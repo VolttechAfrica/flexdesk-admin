@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { authService, LoginResponse } from "@services/api/auth.ts";
+import { authService, LoginResponse } from "@services/api/auth";
 import { useRouter } from "next/router";
 
 export const useAuth = () => {

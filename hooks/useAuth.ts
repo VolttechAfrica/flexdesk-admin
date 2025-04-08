@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export const useAuth = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const router = useRouter();
 
   const login = async (email: string, password: string) => {

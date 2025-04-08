@@ -28,14 +28,17 @@
 }
 
 .login_form_content {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   width: 100%;
 }
 
+
+
 /* Logo */
 .logo_container {
   margin-bottom: 2.5rem;
+  padding-top:2rem;
 }
 
 /* Welcome heading */

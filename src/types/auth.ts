@@ -1,4 +1,4 @@
-import { UserData } from "@types/user";
+import { UserData } from "@type/user";
 
 export interface LoginCredentials {
     email: string;

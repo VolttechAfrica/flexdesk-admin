@@ -6,7 +6,7 @@ import {
   ForgotPasswordCredentials,
   ForgotPasswordResponse,
   LoginResponse,
-} from "@types/auth";
+} from "@type/auth";
 
 export const authService = {
   async login(credentials: LoginCredentials): Promise<LoginResponse> {

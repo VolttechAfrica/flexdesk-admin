@@ -23,7 +23,7 @@
       "@services/*": ["services/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],
-      "@types/*": ["types/*"],
+      "@type/*": ["types/*"],
       "@context/*": ["context/*"],
       "@layouts/*": ["layouts/*"],
       "@store/*": ["store/*"],

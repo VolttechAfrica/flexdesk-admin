@@ -3,8 +3,8 @@
 import { createContext, useState, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { authService } from '@services/api/auth';
-import type { LoginResponse, ForgotPasswordResponse} from '@types/auth';
-import type { UserData } from '@types/user';
+import { LoginResponse, ForgotPasswordResponse} from '@types/auth';
+import { UserData } from '@types/user';
 import Cookies from 'js-cookie';
 
 interface AuthContextType {

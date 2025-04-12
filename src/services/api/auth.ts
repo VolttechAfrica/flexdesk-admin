@@ -9,6 +9,8 @@ import {
 } from "@type/auth";
 
 export const authService = {
+
+  
   async login(credentials: LoginCredentials): Promise<LoginResponse> {
     const response = await axios.post<LoginResponse>(
       `${API_URL}/auth/login`,
@@ -22,6 +24,8 @@ export const authService = {
     );
     return response.data;
   },
+
+
 
   async forgotPassword(
     credentials: ForgotPasswordCredentials

@@ -20,7 +20,6 @@ interface AuthContextType {
   clearError: () => void;
 }
 
-
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -52,11 +51,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const logout = () => {
     setUser(null);
     setUserData(null);
-    router.push('/login');
+    router.replace('/login');
   };
 
   const forgotPassword = async (email: string) => {
     setError(null);
+
+
+
     setMessage(null);  
     setIsLoading(true);
 

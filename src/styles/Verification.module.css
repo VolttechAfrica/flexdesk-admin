@@ -1,0 +1,138 @@
+.verification_container {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 0rem;
+}
+
+.welcome_heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.verification_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.verification_subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.code_input_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.code_input {
+  width: 100%;
+  max-width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid #d1d5db;
+  border-radius: 0.75rem;
+  background-color: white;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.code_input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.expiry_text {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.button_container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+
+.resend_container {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.resend_button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.resend_button:hover:not(:disabled) {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.resend_button:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.back_button_container {
+  display: flex;
+  justify-content: center;
+}
+
+.back_button {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back_button:hover {
+  color: #4b5563;
+  text-decoration: underline;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+@media (max-width: 480px) {
+  .code_input {
+    max-width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.25rem;
+  }
+}

@@ -1,18 +1,27 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
-import { useState } from "react";
-import styles from "@styles/Login.module.css";
+'use client';
 
-import { useAuth } from "@hooks/useAuth";
-import FormInput from "@components/FormInput";
-import SubmitButton from "@components/Button";
-import AuthLayout from "@layouts/AuthLayout";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import styles from '@styles/Login.module.css';
+import { useAuth } from '@hooks/useAuth';
+import FormInput from '@components/FormInput';
+import SubmitButton from '@components/Button';
+import AuthLayout from '@layouts/AuthLayout';
+import { useRouter } from 'next/navigation';
 
 const Login: NextPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, error, isLoading } = useAuth();
+  const { login, error, isLoading, isAuthenticated } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push('/dashboard');
+    }
+  }, [isAuthenticated, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -76,7 +85,7 @@ const Login: NextPage = () => {
               </label>
             </div>
             <div>
-              <Link href="/forgot-password" className={styles.forgot_password}>
+              <Link href="/forgotpassword" className={styles.forgot_password}>
                 Forgot Password?
               </Link>
             </div>

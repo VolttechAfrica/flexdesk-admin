@@ -3,8 +3,8 @@
 import { createContext, useState, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { authService } from '@services/api/auth';
-import { LoginResponse, ForgotPasswordResponse} from '@types/auth';
-import { UserData } from '@types/user';
+import { LoginResponse, ForgotPasswordResponse} from '@type/auth';
+import { UserData } from '@type/user';
 import Cookies from 'js-cookie';
 
 interface AuthContextType {
@@ -25,14 +25,14 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<LoginResponse | null>(null);
-  const [userData, setUserData] = useState<UserData | null>(null); // Add userData state
+  const [userData, setUserData] = useState<UserData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const router = useRouter();
 
   const clearError = () => {
-    setError(null);  // Clears the error state
+    setError(null);
   };
 
   const login = async (email: string, password: string) => {

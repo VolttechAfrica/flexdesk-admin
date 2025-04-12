@@ -41,9 +41,12 @@
   padding-top:2rem;
 }
 
+
+
 /* Welcome heading */
 .welcome_heading {
   margin-bottom: 2.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .subtitle {
@@ -223,6 +226,7 @@
   width: 100%;
   height: auto;
 }
+
 .error {
   display: flex;
   align-items: center;
@@ -234,6 +238,7 @@
   margin-bottom: 1rem;
   border: 1px solid #FEE4E2;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .error::before {
@@ -241,4 +246,41 @@
   font-size: 20px;
   font-weight: bold;
 }
+
+.success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #027A48;
+  background: #ECFDF3;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #A6F4C5;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.success::before {
+  content: "✔";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+@media (max-width: 480px) {
+  .logo_container {
+    margin-bottom: 2.5rem;
+    padding-top:0rem !important;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .login_form_container {
+    padding-top: 2.5rem;;
+  }
+  
+}
+
+
+
 

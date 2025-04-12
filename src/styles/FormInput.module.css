@@ -40,7 +40,7 @@
   /* Login button */
 .login_button {
     width: 100%;
-    background-color: #4361ee;
+    background-color: #3b82f6;
     color: white;
     padding: 1.3rem;
     border: none;
@@ -53,7 +53,7 @@
   }
   
   .login_button:hover {
-    background-color: #3a56d4;
+    background-color: #2563eb;
   }
   
   .login_button:disabled {

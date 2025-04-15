@@ -22,6 +22,7 @@ const ForgotPassword: NextPage = () => {
     await forgotPassword(email);
   };
 
+  
   return (
     <>
       <Head>

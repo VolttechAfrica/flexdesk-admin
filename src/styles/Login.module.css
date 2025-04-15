@@ -28,19 +28,25 @@
 }
 
 .login_form_content {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   width: 100%;
 }
 
+
+
 /* Logo */
 .logo_container {
   margin-bottom: 2.5rem;
+  padding-top:2rem;
 }
+
+
 
 /* Welcome heading */
 .welcome_heading {
   margin-bottom: 2.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .subtitle {
@@ -80,37 +86,6 @@
   color: #666;
 }
 
-.input_container {
-  position: relative;
-}
-
-.form_input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: none;
-  border-bottom: 2px solid #e2e8f0;
-  background-color: transparent;
-  transition: border-color 0.2s ease;
-  font-size: 1rem;
-}
-
-.form_input:focus {
-  outline: none;
-  border-color: #4361ee;
-}
-
-.input_icon {
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #10b981;
-}
-
-.check_icon {
-  height: 1.25rem;
-  width: 1.25rem;
-}
 
 /* Form options */
 .form_options {
@@ -144,29 +119,6 @@
 
 .forgot_password:hover {
   color: #3a56d4;
-}
-
-/* Login button */
-.login_button {
-  width: 100%;
-  background-color: #4361ee;
-  color: white;
-  padding: 0.75rem 1rem;
-  border: none;
-  border-radius: 0.375rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.login_button:hover {
-  background-color: #3a56d4;
-}
-
-.login_button:disabled {
-  background: #a4b6f1;
-  cursor: not-allowed;
 }
 
 /* Sign up link */
@@ -274,6 +226,7 @@
   width: 100%;
   height: auto;
 }
+
 .error {
   display: flex;
   align-items: center;
@@ -285,6 +238,7 @@
   margin-bottom: 1rem;
   border: 1px solid #FEE4E2;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .error::before {
@@ -292,13 +246,41 @@
   font-size: 20px;
   font-weight: bold;
 }
-@media (max-width: 480px) {
-  .form_input {
-    padding: 1rem;
-  }
-  .login_button {
-    padding: 1rem;
-    font-size: 15px;
-  }
 
+.success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #027A48;
+  background: #ECFDF3;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #A6F4C5;
+  font-size: 14px;
+  cursor: pointer;
 }
+
+.success::before {
+  content: "✔";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+@media (max-width: 480px) {
+  .logo_container {
+    margin-bottom: 2.5rem;
+    padding-top:0rem !important;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .login_form_container {
+    padding-top: 2.5rem;;
+  }
+  
+}
+
+
+
+

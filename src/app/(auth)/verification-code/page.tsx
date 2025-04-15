@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCountdown } from '@hooks/useCountdown';
 import { useVerificationTimer } from '@hooks/useVerificationTimer';
@@ -24,7 +24,9 @@ export default function VerificationCode() {
     const { countdown, isResendDisabled, setCountdown, setIsResendDisabled } = useCountdown(30);
     const { expiryTime } = useVerificationTimer(900); // 15 minutes expiration
     const { code, handleChange, handleKeyDown } = useVerificationCode();
-    const user = JSON.parse(localStorage.getItem('userData'));
+
+    const [user, setUser] = useState(userData);
+    
 
 
     const handleResend = async() => {
@@ -42,11 +44,13 @@ export default function VerificationCode() {
   
 
   useEffect(() => {
+    const users = JSON.parse(localStorage.getItem('userData'));
+    if (!userData) setUser(users); 
     const token = Cookie.get('resetToken');
-    if (!token || !user) {
+    if (!token || !users) {
       router.replace('/login');
     }
-  }, [router, user]);
+  }, [router, userData]);
 
   return (
     <AuthLayout>

@@ -11,6 +11,7 @@ import SubmitButton from '@components/Button';
 import AuthLayout from '@layouts/AuthLayout';
 import { useRouter } from 'next/navigation';
 
+
 const Login: NextPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -99,8 +100,7 @@ const Login: NextPage = () => {
         </form>
 
         <div className={styles.signup_link}>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href="/register" className={styles.link}>
             Sign up
           </Link>

@@ -6,7 +6,6 @@ import { authService } from '@services/api/auth';
 import { LoginResponse, ForgotPasswordResponse, OtyVerificationResponse} from '@type/auth';
 import { UserData } from '@type/user';
 import Cookies from 'js-cookie';
-import path from 'path';
 
 interface AuthContextType {
   user: LoginResponse | null;

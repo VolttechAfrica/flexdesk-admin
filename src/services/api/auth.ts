@@ -6,14 +6,14 @@ import {
   ForgotPasswordCredentials,
   ForgotPasswordResponse,
   LoginResponse,
+  OtyVerificationCredentials,
+  OtyVerificationResponse,
 } from "@type/auth";
 
 export const authService = {
-
-
   async login(credentials: LoginCredentials): Promise<LoginResponse> {
     const response = await axios.post<LoginResponse>(
-      `${API_URL}/auth/login`,
+      `${API_URL}/login`,
       credentials,
       {
         headers: {
@@ -24,14 +24,12 @@ export const authService = {
     );
     return response.data;
   },
-
-
 
   async forgotPassword(
     credentials: ForgotPasswordCredentials
   ): Promise<ForgotPasswordResponse> {
     const response = await axios.post<ForgotPasswordResponse>(
-      `${API_URL}/auth/forgot-password`,
+      `${API_URL}/password/forgot`,
       credentials,
       {
         headers: {
@@ -43,16 +41,17 @@ export const authService = {
     return response.data;
   },
 
-  async confirmVerification(
-    credentials: ForgotPasswordCredentials
-  ): Promise<ForgotPasswordResponse> {
-    const response = await axios.post<ForgotPasswordResponse>(
-      `${API_URL}/auth/confirm-verification`,
+  async otyVerification(
+    credentials: OtyVerificationCredentials
+  ): Promise<OtyVerificationResponse> {
+    const response = await axios.post<OtyVerificationResponse>(
+      `${API_URL}/password/otp/verify`,
       credentials,
       {
         headers: {
           "Content-Type": "application/json",
           "X-API-Key": MOCKARO_KEY,
+          Authorization: `Bearer ${credentials.token}`,
         },
       }
     );

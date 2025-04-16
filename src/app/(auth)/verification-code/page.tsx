@@ -14,18 +14,22 @@ import styles from '@styles/Verification.module.css';
 import style from '@styles/Login.module.css';
 import { useAuth } from '@hooks/useAuth';
 import Cookie from 'js-cookie';
+import AuthHeader from '@components/AuthHeader';
+import ForbiddenPageAccessDenied from '@components/page/403-Forbidden-Page-Access-Denied';
 
 
 export default function VerificationCode() {
     const router = useRouter();
     
-    const {isLoading, otyVerification, message, userData, error, forgotPassword, clearError } = useAuth();
+    const {isLoading, otpVerification, message, userData, error, forgotPassword, clearError } = useAuth();
   
     const { countdown, isResendDisabled, setCountdown, setIsResendDisabled } = useCountdown(30);
     const { expiryTime } = useVerificationTimer(900); // 15 minutes expiration
     const { code, handleChange, handleKeyDown } = useVerificationCode();
 
     const [user, setUser] = useState(userData);
+
+    const token = Cookie.get('resetToken');
     
 
 
@@ -37,7 +41,7 @@ export default function VerificationCode() {
   
     const handleVerify = async() => {
       const verificationCode = code.join('');
-      await otyVerification(user.id || '', verificationCode);
+      await otpVerification(user.id || '', verificationCode);
     };
 
   const handleBack = () => router.back();
@@ -46,19 +50,16 @@ export default function VerificationCode() {
   useEffect(() => {
     const users = JSON.parse(localStorage.getItem('userData'));
     if (!userData) setUser(users); 
-    const token = Cookie.get('resetToken');
-    if (!token || !users) {
-      router.replace('/login');
-    }
   }, [router, userData]);
 
   return (
-    <AuthLayout>
+    <>    { token ? (
+      <AuthLayout>
       <div className={styles.verification_container}>
-        <div className={styles.welcome_heading}>
-          <h1 className={styles.verification_title}>Verification Code</h1>
-          <p className={styles.subtitle}>Enter the verification code sent to your email.</p>
-        </div>
+        <AuthHeader
+          title="Verification Code"
+          subtitle="Enter the verification code sent to your email."
+        />
 
         {error && <div className={style.error} onClick={clearError}>{error}</div>}
           {message && <div className={style.success}>{message}</div>}
@@ -80,5 +81,12 @@ export default function VerificationCode() {
         <BackButton onClick={handleBack} />
       </div>
     </AuthLayout>
+    ) : (
+      
+      <ForbiddenPageAccessDenied />
+    )
+
+    }
+    </>
   );
 }

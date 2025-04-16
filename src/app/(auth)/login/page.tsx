@@ -10,6 +10,7 @@ import FormInput from '@components/FormInput';
 import SubmitButton from '@components/Button';
 import AuthLayout from '@layouts/AuthLayout';
 import { useRouter } from 'next/navigation';
+import AuthHeader from '@components/AuthHeader';
 
 
 const Login: NextPage = () => {
@@ -39,40 +40,30 @@ const Login: NextPage = () => {
 
       <AuthLayout>
         {/* Heading */}
-        <div className={styles.welcome_heading}>
-          <h1>Login</h1>
-          <p className={styles.subtitle}>
-            Welcome back! Please enter your details
-          </p>
-        </div>
+        <AuthHeader
+          title="Welcome back!"
+          subtitle="Please enter your details to login."
+        />
 
         {/* Form */}
         <form className={styles.login_form} onSubmit={handleSubmit}>
           {error && <div className={styles.error}>{error}</div>}
-          <div className={styles.form_group}>
-            <label htmlFor="username" className={styles.form_label}>
-              Email Address
-            </label>
+          
             <FormInput
               type="email"
               placeholder="Enter your email"
               value={email}
+              label="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
-          </div>
-
-          <div className={styles.form_group}>
-            <label htmlFor="password" className={styles.form_label}>
-              Password
-            </label>
+          
             <FormInput
               type="password"
               placeholder="Enter your password"
+              label='Password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-          </div>
-
           <div className={styles.form_options}>
             <div className={styles.remember_me}>
               <input

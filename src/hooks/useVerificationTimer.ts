@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@hooks/useAuth';
+import Cookie from 'js-cookie';
 
 
 const EXPIRY_KEY = 'verification_expiry_start';
@@ -32,6 +33,9 @@ export const useVerificationTimer = (initialSeconds: number) => {
       if (remaining <= 0) {
         clearInterval(interval);
         localStorage.removeItem(EXPIRY_KEY);
+        localStorage.removeItem('userData');
+        localStorage.removeItem('resetToken');
+        Cookie.remove('resetToken');
         clearError();
         router.replace('/login');
       }

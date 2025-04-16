@@ -10,6 +10,8 @@ import { useAuth } from "@hooks/useAuth";
 import FormInput from "@components/FormInput";
 import SubmitButton from "@components/Button";
 import AuthLayout from "@layouts/AuthLayout";
+import AuthHeader from "@components/AuthHeader";
+
 
 const ForgotPassword: NextPage = () => {
   
@@ -32,28 +34,23 @@ const ForgotPassword: NextPage = () => {
       </Head>
 
       <AuthLayout>
-        <div className={styles.welcome_heading}>
-          <h1>Forgot Password</h1>
-          <p className={styles.subtitle}>
-            Enter your email and we’ll send you a reset link.
-          </p>
-        </div>
-
+        <>
+       
+        <AuthHeader
+          title="Forgot Password"
+          subtitle="Enter your email and we’ll send you a reset link."
+        />
         <form className={styles.login_form} onSubmit={handleSubmit}>
           {error && <div className={styles.error} onClick={clearError}>{error}</div>}
           {message && <div className={styles.success}>{message}</div>}
 
-          <div className={styles.form_group}>
-            <label htmlFor="email" className={styles.form_label}>
-              Email Address
-            </label>
             <FormInput
               type="email"
               placeholder="Enter your email"
               value={email}
+              label="Email Address"
               onChange={(e) => setEmail(e.target.value)}
             />
-          </div>
 
           <SubmitButton
             isLoading={isLoading}
@@ -68,6 +65,7 @@ const ForgotPassword: NextPage = () => {
             Back to login
           </Link>
         </div>
+        </>
       </AuthLayout>
     </>
   );

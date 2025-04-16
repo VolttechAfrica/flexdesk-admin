@@ -1,4 +1,3 @@
-// services/api.ts
 import axios from "axios";
 import { API_URL, MOCKARO_KEY } from "@config/constants";
 import {
@@ -6,54 +5,60 @@ import {
   ForgotPasswordCredentials,
   ForgotPasswordResponse,
   LoginResponse,
-  OtyVerificationCredentials,
-  OtyVerificationResponse,
+  OtpVerificationCredentials,
+  OtpVerificationResponse,
+  ResetPasswordCredentials,
+  ResetPasswordResponse,
 } from "@type/auth";
 
+// --- Helper to build headers ---
+const getHeaders = (token?: string) => ({
+  "Content-Type": "application/json",
+  "X-API-Key": MOCKARO_KEY,
+  ...(token && { Authorization: `Bearer ${token}` }),
+});
+
+
 export const authService = {
-  async login(credentials: LoginCredentials): Promise<LoginResponse> {
+  login: async (credentials: LoginCredentials): Promise<LoginResponse> => {
     const response = await axios.post<LoginResponse>(
       `${API_URL}/login`,
       credentials,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "X-API-Key": MOCKARO_KEY,
-        },
-      }
+      { headers: getHeaders() }
     );
     return response.data;
   },
 
-  async forgotPassword(
+  forgotPassword: async (
     credentials: ForgotPasswordCredentials
-  ): Promise<ForgotPasswordResponse> {
+  ): Promise<ForgotPasswordResponse> => {
     const response = await axios.post<ForgotPasswordResponse>(
       `${API_URL}/password/forgot`,
       credentials,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "X-API-Key": MOCKARO_KEY,
-        },
-      }
+      { headers: getHeaders() }
     );
     return response.data;
   },
 
-  async otyVerification(
-    credentials: OtyVerificationCredentials
-  ): Promise<OtyVerificationResponse> {
-    const response = await axios.post<OtyVerificationResponse>(
+  verifyOtp: async (
+    credentials: OtpVerificationCredentials
+  ): Promise<OtpVerificationResponse> => {
+    const response = await axios.post<OtpVerificationResponse>(
       `${API_URL}/password/otp/verify`,
       credentials,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "X-API-Key": MOCKARO_KEY,
-          Authorization: `Bearer ${credentials.token}`,
-        },
-      }
+      { headers: getHeaders(credentials.token) }
+    );
+    return response.data;
+  },
+
+  resetPassword: async (
+    credentials: ResetPasswordCredentials
+  ): Promise<ResetPasswordResponse> => {
+    const { userId, token, newPassword } = credentials;
+    const response = await axios.patch<ResetPasswordResponse>(
+      `${API_URL}/password/reset`,
+      { userId, newPassword },
+      { headers: getHeaders(token) }
     );
     return response.data;
   },

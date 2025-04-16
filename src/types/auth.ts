@@ -22,15 +22,26 @@ export interface LoginResponse {
     data: UserData;
     error: string;
   }
-export interface OtyVerificationCredentials {
+export interface OtpVerificationCredentials {
     userId: string;
     token: string;
     otp: string;
   }
-  export interface OtyVerificationResponse {
+  export interface OtpVerificationResponse {
     success: boolean;
     token: string;
     userId: string;
     error: string;
+  }
 
+  export interface ResetPasswordCredentials {
+    userId: string;
+    token: string;
+    newPassword: string;
+  }
+
+  export interface ResetPasswordResponse {
+    success: boolean;
+    message: string;
+    error: string;
   }

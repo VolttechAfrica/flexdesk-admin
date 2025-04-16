@@ -25,7 +25,7 @@ const ForbiddenPageAccessDenied = () => {
         <h1 className={styles.title}>We are Sorry...</h1>
 
         <div className={styles.message}>
-          <p>The page you're trying to access has restricted access.</p>
+          <p>The page you&apos;re trying to access has restricted access.</p>
           <p>Please refer to your system administrator</p>
         </div>
 

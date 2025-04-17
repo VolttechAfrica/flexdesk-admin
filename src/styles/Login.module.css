@@ -276,9 +276,14 @@
     padding-right: 0.5rem;
   }
   .login_form_container {
-    padding-top: 2.5rem;;
+    padding-top: 1rem;
   }
-  
+  .verification_title {
+    font-size: 1.5rem;
+  }
+  .login_form_container{
+    padding: 1.6rem;
+  }
 }
 
 

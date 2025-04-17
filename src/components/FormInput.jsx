@@ -61,7 +61,7 @@ export default function FormInput({
     );
   return (
     <div className={styles.form_group}>
-      <label htmlFor={label} className={styles.form_label}>
+      <label htmlFor={label} className={style.form_label}>
         {label}
       </label>
       <div className={styles.input_container}>

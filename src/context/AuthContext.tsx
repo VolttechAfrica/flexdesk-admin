@@ -5,9 +5,10 @@ import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
 
 import { authService } from '@services/api/auth';
-import { LoginResponse, ForgotPasswordResponse, OtpVerificationResponse } from '@type/auth';
+import { LoginResponse, ForgotPasswordResponse, OtpVerificationResponse, RegisterCredentials, RegisterResponse } from '@type/auth';
 import { UserData } from '@type/user';
 import { AuthContextType } from '@type/context';
+
 
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -34,6 +35,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       const res = await authService.login({ email, password });
       setUser(res);
+      Cookies.set('token', res.token);
+      localStorage.setItem('loginUser', JSON.stringify(res.data));
       router.push('/dashboard');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Internal Error, Login failed');
@@ -45,6 +48,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const logout = () => {
     setUser(null);
     setUserData(null);
+    Cookies.remove('token');
+    localStorage.removeItem('loginUser');
     router.replace('/login');
   };
 
@@ -130,6 +135,30 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const register = async (data: RegisterCredentials) => {
+    setIsLoading(true);
+    try {
+      const res: RegisterResponse = await authService.register(data);
+
+      if (res.success) {
+        setMessage(res.message || 'Registration successful, proceed to login');
+        clearError();
+        setTimeout(() => {
+          setMessage(null);
+          router.push('/login');
+        }, 2000);
+      } else {
+        throw new Error(res.error || 'Registration failed');
+      }
+    } catch (err: any) {
+      setError(err.response?.data?.message || err.message || 'Internal Error');
+    } finally {
+      setIsLoading(false);
+    }
+
+
+  }
+
   return (
     <AuthContext.Provider
       value={{
@@ -145,6 +174,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         forgotPassword,
         otpVerification,
         resetPassword,
+        register,
         clearError,
         clearMessage
       }}

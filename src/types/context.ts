@@ -1,4 +1,4 @@
-import { LoginResponse } from '@type/auth';
+import { LoginResponse, RegisterCredentials } from '@type/auth';
 import { UserData } from '@type/user';
 
 export interface AuthContextType {
@@ -16,4 +16,5 @@ export interface AuthContextType {
   resetPassword: (userId: string, newPassword: string) => Promise<void>;
   clearError: () => void;
   clearMessage: () => void;
+  register: (RegisterCredentials) => Promise<void>;
 }

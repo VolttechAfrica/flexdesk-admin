@@ -45,3 +45,18 @@ export interface OtpVerificationCredentials {
     message: string;
     error: string;
   }
+export interface RegisterCredentials {
+    organization_name: string;
+    organization_address: string;
+    organization_email: string;
+    organization_phone: string;
+    full_name: string;
+    personal_email: string;
+    password: string;
+  }
+
+export interface RegisterResponse {
+    success: boolean;
+    message: string;
+    error: string;
+  }

@@ -9,6 +9,8 @@ import {
   OtpVerificationResponse,
   ResetPasswordCredentials,
   ResetPasswordResponse,
+  RegisterCredentials,
+  RegisterResponse,
 } from "@type/auth";
 
 // --- Helper to build headers ---
@@ -62,4 +64,15 @@ export const authService = {
     );
     return response.data;
   },
+
+  register: async (
+    credentials: RegisterCredentials
+  ): Promise<RegisterResponse> => {
+    const response = await axios.post<RegisterResponse>(
+      `${API_URL}/register`,
+      credentials,
+      { headers: getHeaders() }
+    );
+    return response.data;
+  }
 };

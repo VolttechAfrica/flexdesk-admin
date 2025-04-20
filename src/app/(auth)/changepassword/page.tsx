@@ -4,12 +4,12 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import AuthLayout from "@layouts/AuthLayout";
 import styles from "@styles/Login.module.css";
-import SubmitButton from "@components/Button";
-import FormInput from "@components/FormInput";
-import BackButton from "@components/BackButton";
+import SubmitButton from "@components/auth/SubmitButton";
+import FormInput from "@components/auth/FormInput";
+import BackButton from "@components/auth/BackButton";
 import { useAuth } from "@hooks/useAuth";
 import Cookie from "js-cookie";
-import AuthHeader from "@components/AuthHeader";
+import AuthHeader from "@components/auth/AuthHeader";
 import toast, {Toaster} from "react-hot-toast";
 import ForbiddenPageAccessDenied from "@components/page/403-Forbidden-Page-Access-Denied";
 

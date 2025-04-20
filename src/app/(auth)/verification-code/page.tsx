@@ -5,16 +5,16 @@ import { useRouter } from 'next/navigation';
 import { useCountdown } from '@hooks/useCountdown';
 import { useVerificationTimer } from '@hooks/useVerificationTimer';
 import { useVerificationCode } from '@hooks/useVerificationCode';
-import CodeInput from '@components/CodeInput';
-import ResendButton from '@components/ResendButton';
-import SubmitButton from '@components/Button';
-import BackButton from '@components/BackButton';
+import CodeInput from '@components/auth/CodeInput';
+import ResendButton from '@components/auth/ResendButton';
+import SubmitButton from '@components/auth/SubmitButton';
+import BackButton from '@components/auth/BackButton';
 import AuthLayout from '@layouts/AuthLayout';
 import styles from '@styles/Verification.module.css';
 import style from '@styles/Login.module.css';
 import { useAuth } from '@hooks/useAuth';
 import Cookie from 'js-cookie';
-import AuthHeader from '@components/AuthHeader';
+import AuthHeader from '@components/auth/AuthHeader';
 import ForbiddenPageAccessDenied from '@components/page/403-Forbidden-Page-Access-Denied';
 
 

@@ -4,10 +4,10 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 import AuthLayout from "@layouts/AuthLayout";
-import AuthHeader from "@components/AuthHeader";
-import SubmitButton from "@components/Button";
-import BackButton from "@components/BackButton";
-import FormInput from "@components/FormInput";
+import AuthHeader from "@components/auth/AuthHeader";
+import SubmitButton from "@components/auth/SubmitButton";
+import BackButton from "@components/auth/BackButton";
+import FormInput from "@components/auth/FormInput";
 import styles from "@styles/Login.module.css";
 import progressStyles from "@styles/ProgressBar.module.css";
 import { useAuth } from "@hooks/useAuth";

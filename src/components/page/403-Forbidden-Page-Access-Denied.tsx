@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import styles from "@styles/Forbidden.module.css"
-import BasicButton from "@components/BasicButton"
+import BasicButton from "@components/auth/BasicButton"
 
 const ForbiddenPageAccessDenied = () => {
   const goBack = () => {

@@ -1,0 +1,131 @@
+.header {
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .header_container {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  
+  .mobile_menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu_button {
+    color: var(--header-icons);
+  }
+  
+  .menu_button:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+  
+  .menu_icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .header_content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .search_container {
+    display: none;
+    width: 33%;
+  }
+  
+  .search_wrapper {
+    position: relative;
+  }
+  
+  .search_icon {
+    position: absolute;
+    left: 0.625rem;
+    top: 0.625rem;
+    height: 1rem;
+    width: 1rem;
+    color: #9ca3af;
+  }
+  
+  .search_input {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding-left: 2.25rem;
+    font-size: 0.875rem;
+    color: #111827;
+  }
+  
+  .search_input:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+  
+  .header_actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .action_button {
+    color: var(--header-icons);
+  }
+  
+  .action_button:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+  
+  .action_icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    /* border: 2px solid --border-color; */
+  }
+  
+  
+  .mobile_search {
+    display: block;
+  }
+  
+  .theme_toggle_button {
+    color: var(--header-icons);
+  }
+  
+  .theme_toggle_button:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+  
+  @media (min-width: 768px) {
+    .header_container {
+      padding: 0 1.5rem;
+    }
+  
+    .mobile_menu {
+      display: none;
+    }
+  
+    .search_container {
+      display: block;
+    }
+  
+    .header_content {
+      justify-content: space-between;
+    }
+  
+    .mobile_search {
+      display: none;
+    }
+  
+    .search_container {
+      width: 50%;
+    }
+  }
+
+  

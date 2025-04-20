@@ -1,0 +1,99 @@
+.mobile_nav_dialog {
+    position: relative;
+    z-index: 50;
+  }
+  
+  @media (min-width: 768px) {
+    .mobile_nav_dialog {
+      display: none;
+    }
+  }
+  
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(17, 24, 39, 0.8);
+  }
+  
+  .mobile_nav_container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+  }
+  
+  .mobile_nav_panel {
+    position: relative;
+    margin-right: 4rem;
+    display: flex;
+    width: 100%;
+    max-width: 20rem;
+    flex: 1;
+  }
+  
+  .close_button_container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    width: 4rem;
+    justify-content: center;
+    padding-top: 1.25rem;
+  }
+  
+  .close_button {
+    margin: -0.625rem;
+    padding: 0.625rem;
+    color: white;
+    background: transparent;
+    border: none;
+  }
+  
+  .close_icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .mobile_sidebar {
+    display: flex;
+  }
+  
+  /* Transitions */
+  .fade_in {
+    transition-property: opacity;
+    transition-timing-function: linear;
+    transition-duration: 300ms;
+  }
+  
+  .fade_out {
+    transition-property: opacity;
+    transition-timing-function: linear;
+    transition-duration: 300ms;
+  }
+  
+  .slide_in {
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+  }
+  
+  .slide_out {
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+  }
+  
+  .opacity_0 {
+    opacity: 0;
+  }
+  
+  .opacity_100 {
+    opacity: 1;
+  }
+  
+  .translate_x_0 {
+    transform: translateX(0);
+  }
+  
+  .translate_x_neg {
+    transform: translateX(-100%);
+  }

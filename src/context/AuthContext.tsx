@@ -35,8 +35,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       const res = await authService.login({ email, password });
       setUser(res);
-      Cookies.set('token', res.token);
-      localStorage.setItem('loginUser', JSON.stringify(res.data));
+      Cookies.set('login_token', res.token);
+      Cookies.set('loginUser', JSON.stringify(res.data));
       router.push('/dashboard');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Internal Error, Login failed');
@@ -48,9 +48,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const logout = () => {
     setUser(null);
     setUserData(null);
-    Cookies.remove('token');
-    localStorage.removeItem('loginUser');
+    Cookies.remove('login_token');
+    Cookies.remove('loginUser');
     router.replace('/login');
+    return true;
   };
 
   const forgotPassword = async (email: string) => {

@@ -1,8 +1,30 @@
+:root {
+  --primary-color: #3b82f6;
+  --text-color: #333;
+  --background-color: #f9fafb;
+  --card-background: #fff;
+  --border-color: #e5e7eb;
+  --hover-color: #f3f4f6;
+  --active-text: #fff;
+  --active-link: #1a202c;
+  --header-icons: #4b5563;
+}
+
+.dark {
+  --text-color: #f9fafb;
+  --background-color: #111827;
+  --card-background: #1f2937;
+  --border-color: #374151;
+  --hover-color: #374151;
+  --active-text: #111827;
+  --active-link: #f3f4f6;
+  --header-icons: #111827;
+}
+
 html,
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #333;
-  background-color: #fff;
+  color: var(--text-color);
+  background-color: var(--background-color);
   line-height: 1.5;
 }
 
@@ -11,8 +33,52 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+[data-headlessui-state='open'] .transition-opacity {
+  opacity: 1;
+  transition: opacity 300ms ease-out;
+}
+
+[data-headlessui-state='closed'] .transition-opacity {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+
+[data-headlessui-state='open'] .transition-all {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 300ms ease-out,
+    transform 300ms ease-out;
+}
+
+[data-headlessui-state='closed'] .transition-all {
+  opacity: 0;
+  transform: translateY(1rem) scale(0.95);
+  transition:
+    opacity 200ms ease-in,
+    transform 200ms ease-in;
 }

@@ -1,0 +1,75 @@
+.menu {
+    position: relative;
+    display: inline-block;
+    border: none !important;
+  }
+  
+  .menu_button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none !important;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 9999px;
+    padding: 0.25rem;
+  }
+  .menu_button:active:focus{
+    border: none !important;
+    box-sizing: initial;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+  }
+  
+  .chevron {
+    width: 16px;
+    height: 16px;
+    color: #9ca3af;
+  }
+  
+  .menu_items {
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem;
+    width: 12rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+    animation: fadeIn 150ms ease-out;
+  }
+  
+  .menu_item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    color: #374151;
+    background: white;
+    border: none;
+    text-decoration: none;
+  }
+  
+  .menu_item:hover,
+  .active {
+    background-color: #f3f4f6;
+    color: #111827;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+  

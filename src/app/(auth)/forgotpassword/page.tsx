@@ -7,10 +7,10 @@ import { useState, useEffect } from "react";
 import styles from "@styles/Login.module.css";
 
 import { useAuth } from "@hooks/useAuth";
-import FormInput from "@components/FormInput";
-import SubmitButton from "@components/Button";
+import FormInput from "@components/auth/FormInput";
+import SubmitButton from "@components/auth/SubmitButton";
 import AuthLayout from "@layouts/AuthLayout";
-import AuthHeader from "@components/AuthHeader";
+import AuthHeader from "@components/auth/AuthHeader";
 
 
 const ForgotPassword: NextPage = () => {

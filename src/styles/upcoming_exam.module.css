@@ -1,0 +1,191 @@
+.content_card {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  height: 100%;
+}
+
+.exams_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.content_title {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.dropdown_container {
+  position: relative;
+}
+
+.dropdown_trigger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_icon {
+  width: 20px;
+  height: 20px;
+  color: #666;
+}
+
+.exams_table_container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.exams_table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.exams_table th {
+  text-align: left;
+  padding: 8px 12px 8px 0;
+  font-weight: 500;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.exams_table td {
+  padding: 12px 12px 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.exams_table tr:last-child td {
+  border-bottom: none;
+}
+
+.status_badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status_scheduled,
+.status_pending {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #997405;
+}
+
+.status_in_progress {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: #036dc4;
+}
+
+.status_completed,
+.status_approved {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #038f08;
+}
+
+.status_cancelled {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #ce1407;
+}
+
+.status_uploaded {
+  background-color: rgba(156, 39, 176, 0.1);
+  color: #9c27b0;
+}
+
+.loading,
+.error,
+.no_data {
+  text-align: center;
+  padding: 24px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.error {
+  color: #f44336;
+}
+
+.no_exams_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.no_exams_icon {
+  width: 48px;
+  height: 48px;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.no_exams_text {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.create_exam_button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.create_exam_button:hover {
+  background-color: #e0e0e0;
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .exams_table th:nth-child(3),
+  .exams_table td:nth-child(3) {
+    display: none;
+  }
+
+  .exams_table th,
+  .exams_table td {
+    padding: 8px 4px;
+  }
+
+  .status_badge {
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content_card {
+    padding: 12px;
+  }
+
+  .exams_table th,
+  .exams_table td {
+    padding: 6px 2px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,128 @@
+.content_card {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    height: 100%;
+  }
+  
+  .activity_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .content_title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+  }
+  
+  .dropdown_container {
+    position: relative;
+  }
+  
+  .dropdown_trigger {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dropdown_icon {
+    width: 20px;
+    height: 20px;
+    color: #666;
+  }
+  
+  .activity_table_container {
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+  .activity_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .activity_table th {
+    text-align: left;
+    padding: 8px 12px 8px 0;
+    font-weight: 500;
+    color: #666;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .activity_table td {
+    padding: 12px 12px 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .activity_table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .amount {
+    font-family: "Roboto Mono", monospace, sans-serif;
+  }
+  
+  .loading,
+  .error,
+  .no_data {
+    text-align: center;
+    padding: 24px 0;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .error {
+    color: #f44336;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .activity_table th:nth-child(2),
+    .activity_table td:nth-child(2) {
+      display: none;
+    }
+  
+    .activity_table th,
+    .activity_table td {
+      padding: 8px 4px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .activity_table th:nth-child(5),
+    .activity_table td:nth-child(5) {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content_card {
+      padding: 12px;
+    }
+  
+    .activity_table th,
+    .activity_table td {
+      padding: 6px 2px;
+      font-size: 12px;
+    }
+  
+    .amount {
+      font-size: 11px;
+    }
+  }
+  .activity_table p {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: var(--des-text-color);
+  }
+  

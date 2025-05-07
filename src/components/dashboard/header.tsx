@@ -5,13 +5,6 @@ import { Button } from "@components/ui/button";
 import { Input } from "@components/ui/input";
 import ModeToggle from "@components/dashboard/mode-toggle";
 import styles from "@styles/header.module.css";
-import {
-  Menu as Dropdown,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/react";
-import Image from "next/image";
 import ProfileMenu from "./ProfileMenu";
 
 interface HeaderProps {

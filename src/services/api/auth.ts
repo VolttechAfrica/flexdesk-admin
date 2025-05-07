@@ -24,7 +24,7 @@ const getHeaders = (token?: string) => ({
 export const authService = {
   login: async (credentials: LoginCredentials): Promise<LoginResponse> => {
     const response = await axios.post<LoginResponse>(
-      `${API_URL}/login`,
+      `${API_URL}/auth/login`,
       credentials,
       { headers: getHeaders() }
     );
@@ -35,7 +35,7 @@ export const authService = {
     credentials: ForgotPasswordCredentials
   ): Promise<ForgotPasswordResponse> => {
     const response = await axios.post<ForgotPasswordResponse>(
-      `${API_URL}/password/forgot`,
+      `${API_URL}/auth/password/forgot`,
       credentials,
       { headers: getHeaders() }
     );
@@ -46,7 +46,7 @@ export const authService = {
     credentials: OtpVerificationCredentials
   ): Promise<OtpVerificationResponse> => {
     const response = await axios.post<OtpVerificationResponse>(
-      `${API_URL}/password/otp/verify`,
+      `${API_URL}/auth/password/otp/verify`,
       credentials,
       { headers: getHeaders(credentials.token) }
     );
@@ -58,7 +58,7 @@ export const authService = {
   ): Promise<ResetPasswordResponse> => {
     const { userId, token, newPassword } = credentials;
     const response = await axios.patch<ResetPasswordResponse>(
-      `${API_URL}/password/reset`,
+      `${API_URL}/auth/password/reset`,
       { userId, newPassword },
       { headers: getHeaders(token) }
     );
@@ -69,7 +69,7 @@ export const authService = {
     credentials: RegisterCredentials
   ): Promise<RegisterResponse> => {
     const response = await axios.post<RegisterResponse>(
-      `${API_URL}/register`,
+      `${API_URL}/auth/register`,
       credentials,
       { headers: getHeaders() }
     );

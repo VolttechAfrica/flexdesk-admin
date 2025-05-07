@@ -27,7 +27,8 @@
       "@context/*": ["context/*"],
       "@layouts/*": ["layouts/*"],
       "@store/*": ["store/*"],
-      "@config/*": ["config/*"]
+      "@config/*": ["config/*"],
+      "@utilities/*": ["utilities/*"],
     },
     "plugins": [
       {

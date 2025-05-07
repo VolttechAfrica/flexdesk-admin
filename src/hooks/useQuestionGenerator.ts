@@ -60,7 +60,7 @@ export const useQuestionGenerators = () => {
           showConfirmButton: false,
         }).then(() => {
           Cookies.remove(cookieKey);
-          //router.push(`/subject/questions/${subject}/${examSession}`);
+          router.push(`/subject/questions/${subject}/${examSession}`);
         });
 
 

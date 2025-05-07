@@ -17,7 +17,7 @@ interface AppLayoutProps {
 
 export function AppLayout({ children }: AppLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const token = Cookie.get("login_token");
+  const token = Cookie.get("loginToken");
   const router = useRouter();
 
   useEffect(() => {

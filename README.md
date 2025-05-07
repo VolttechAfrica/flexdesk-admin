@@ -1,22 +1,65 @@
-Welcome to the NextJS base template bootstrapped using the `create-next-app`. This template supports TypeScript, but you can use normal JavaScript as well.
+# FlexDesk Admin
+
+`FlexTest` provides a secure, scalable, and AI-enhanced e-testing solution that runs on a local and online server, ensuring full control over data privacy. It enables institutions to conduct exams efficiently with real-time monitoring and secure test environments.
+
+---
 
 ## Getting Started
 
-Hit the run button to start the development server.
+### Prerequisites
+Ensure you have the following installed on your system:
+- **Node.js** (v16 or higher)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/flexdesk-admin.git
+   cd flexdesk-admin
+   ```
+2. Install dependencies
+    ```bash
+    npm install
+    ```
+3. Set up environment variables (see below).
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
+5. Open your browser and navigate to 
+    - Local Development http://localhost:3000
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on `/api/hello`. This endpoint can be edited in `pages/api/hello.ts`.
+### Installation
+The application requires the following environment variables to function correctly.
+```bash
+    NEXT_PUBLIC_MOCKARO_KEY=?
+    NEXT_PUBLIC_API_URL=?
+    NEXT_PUBLIC_APP_NAME=?
+    NEXT_PUBLIC_REMOTEURL=?
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Test Data
+Login Credentials
+Use the following credentials to log in to the application:
 
-## Learn More
+ - Email: ``johndoe@example.com``
+ - Password: ``123456789``
 
-To learn more about Next.js, take a look at the following resources:
+Forgot Password
+To test the forgot password functionality:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Use the email: ``johndoe@example.com.``
 
-## Productionizing your Next App
+A verification code will be sent to the email. For demo purposes, use the following test data:
+ - Verification Code: ``00000``
 
-You can  produce a production build by running `npm run build` and [changing the run command](https://docs.replit.com/programming-ide/configuring-repl#run) to `npm run start`.
+### Running Tests
+The application includes unit and integration tests. To run test
+1. Run all unit test:
+```bash
+    npm run test
+```
+
+2. Run test in watch mode:
+```bash
+    npm run test:watch
+```

@@ -6,12 +6,13 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   size?: "default" | "sm" | "lg" | "icon"
   children: React.ReactNode
   className?: string
+  disabled?: boolean
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = "default", size = "default", className = "", children, ...props }, ref) => {
+  ({disabled=false, variant = "default", size = "default", className = "", children, ...props }, ref) => {
     return (
-      <button className={`button button-${variant} button-${size} ${className}`} ref={ref} {...props}>
+      <button disabled={disabled} className={`button button-${variant} button-${size} ${className}`} ref={ref} {...props}>
         {children}
       </button>
     )

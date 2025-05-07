@@ -1,5 +1,6 @@
 import type React from "react"
-import { ThemeProvider } from "@components/ui/theme-provider"
+import { ThemeProvider } from "@context/theme-provider"
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 
 
 export default function DashboardLayout({
@@ -9,7 +10,9 @@ export default function DashboardLayout({
 }>) {
   return (
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <PrimeReactProvider>
             {children}
+          </PrimeReactProvider>
         </ThemeProvider>
   )
 }

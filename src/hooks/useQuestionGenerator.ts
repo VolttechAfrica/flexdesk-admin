@@ -42,8 +42,9 @@ export const useQuestionGenerators = () => {
 
         if (!question) throw new Error('Internal error, unable to generate Questions')
 
-        questionData = question?.questions
+        questionData = question?.data?.questions
 
+        console.log(questionData);
 
         Cookies.set(cookieKey, JSON.stringify(questionData), { expires: 1 });
 

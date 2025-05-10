@@ -13,7 +13,7 @@ Ensure you have the following installed on your system:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/flexdesk-admin.git
+    git clone https://github.com/VolttechAfrica/flexdesk-admin.git
    cd flexdesk-admin
    ```
 2. Install dependencies
@@ -33,8 +33,14 @@ The application requires the following environment variables to function correct
 ```bash
     NEXT_PUBLIC_MOCKARO_KEY=?
     NEXT_PUBLIC_API_URL=?
-    NEXT_PUBLIC_APP_NAME=?
-    NEXT_PUBLIC_REMOTEURL=?
+    NEXT_PUBLIC_APP_NAME=FlexTest
+    GIT_HUB=?
+    NEXT_PUBLIC_REMOTE_URL=?
+    NEXT_PUBLIC_GEMINI_TOKEN=?
+    NEXT_PUBLIC_DEEP_SEEK_URL=?
+    NEXT_PUBLIC_DEEP_SEEK_TOKEN=?
+    NEXT_PUBLIC_OPENAI_API_KEY=?
+
 ```
 
 ### Test Data
